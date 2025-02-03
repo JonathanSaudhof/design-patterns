@@ -1,20 +1,5 @@
-interface SmartPhoneBuilder {
-  buildScreen(): SmartPhoneBuilder;
-  buildBattery(): SmartPhoneBuilder;
-  buildOS(): SmartPhoneBuilder;
-  buildCamera(): SmartPhoneBuilder;
-  buildProcessor(): SmartPhoneBuilder;
-  reset(): SmartPhoneBuilder;
-  build(): SmartPhone;
-}
-
-class SmartPhone {
-  screen: string | null = null;
-  battery: string | null = null;
-  os: string | null = null;
-  camera: string | null = null;
-  processor: string | null = null;
-}
+import { SmartPhone } from "./smart-phone";
+import { SmartPhoneBuilder } from "./smart-phone-builder.interface";
 
 export class IPhone11Builder implements SmartPhoneBuilder {
   private smartPhone: SmartPhone = new SmartPhone();
