@@ -1,4 +1,3 @@
-import { SmartPhone } from "../builder/smart-phone";
 import { SmartPhonePrototype } from "./prototype.interface";
 
 interface IPhone15Pro extends SmartPhonePrototype<IPhone15Pro> {
