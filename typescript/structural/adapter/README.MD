@@ -1,5 +1,7 @@
 # Adapter pattern
 
+also known as >>Wrapper<<.
+
 > An Adapter acts as a wrapper between two object. It catches calls for on object and transforms them to format
 > and interface recognizable by the second object.
 > -- <cite>[Refactoring Guru](https://refactoring.guru/design-patterns/adapter/go/example)</cite>
@@ -11,22 +13,13 @@ OR
 
 # Problem
 
-You have some legacy code with a certain wanted behavior. However, you want to provide a different interface to the client. Before deprecating the old interface you can wrap the old implementation into an adapter with the new target interface which you can use.
+1. Integration of Legacy Code
 
-Or
+   ... with a certain wanted behavior needs to be integrated.
 
-```mermaid
----
-title:
----
-classDiagram
+2. External API
 
-    class HeadPhone {
-        <<interface>>
-        + int volume
-        + volumeUp()
-        +
-    }
+   If you have a 3rd party api which you want to use, that does not match the needed interface you can wrap it in an adapter.
 
-
-```
+3. Old behavior new interface
+   (Old wine, new bottles)

@@ -1,12 +1,8 @@
-interface ISoundControl {
-  play(): void;
-  stop(): void;
-  volumeUp(): void;
-  volumeDown(): void;
-}
+import { ILightningConnection, ISoundControl } from "./adapter.interface";
 
 // old or external api
-export class LightningConnection {
+export class LightningConnection implements ILightningConnection {
+  private _isPlaying: boolean = false;
   increaseVolume(amount: number): void {
     console.log("Volume increased:", amount);
   }
@@ -17,14 +13,21 @@ export class LightningConnection {
 
   start(): void {
     console.log("Sound started");
+    this._isPlaying = true;
   }
 
   pause(): void {
+    this._isPlaying = false;
     console.log("Sound paused");
   }
 
   stop(): void {
+    this._isPlaying = false;
     console.log("Sound stopped");
+  }
+
+  isPlaying(): boolean {
+    return this._isPlaying;
   }
 }
 
@@ -32,20 +35,17 @@ const VOLUME_STEP = 2;
 
 export class LightningSoundAdapter implements ISoundControl {
   private lightning: LightningConnection;
-  private isPlaying: boolean = false;
 
   constructor(lightning: LightningConnection) {
     this.lightning = lightning;
   }
 
   play(): void {
-    if (this.isPlaying) {
+    if (!this.lightning.isPlaying()) {
+      this.lightning.start();
+    } else {
       this.lightning.pause();
-      this.isPlaying = false;
-      return;
     }
-    this.lightning.start();
-    this.isPlaying = true;
   }
 
   stop(): void {
@@ -58,5 +58,9 @@ export class LightningSoundAdapter implements ISoundControl {
 
   volumeDown(): void {
     this.lightning.decreaseVolume(VOLUME_STEP);
+  }
+
+  isPlaying(): boolean {
+    return this.lightning.isPlaying();
   }
 }
