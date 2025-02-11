@@ -20,15 +20,15 @@ export class EarBuds extends HeadPhones {
   }
   play(): void {
     if (!this.device) {
-      return;
       console.log("Device is not enabled or connected");
+      return;
     }
     this.device.play();
   }
   pause(): void {
     if (!this.device) {
-      return;
       console.log("Device is not enabled or connected");
+      return;
     }
     this.device?.pause();
   }

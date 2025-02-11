@@ -4,7 +4,6 @@ export class SamsungGalaxy implements IPhone {
   isEnabled: boolean = false;
   connectedTo: string = "";
   private volumePercentage: number = 0;
-  private isPlaying: boolean = false;
 
   enable(): void {
     this.isEnabled = true;
@@ -26,6 +25,7 @@ export class SamsungGalaxy implements IPhone {
     this.isEnabled = false;
     console.log(`Samsung Galaxy connected to ${this.connectedTo}: Paused`);
   }
+
   setVolume(percent: number): void {
     if (percent < 0 || percent > 100) {
       throw new Error("Volume must be between 0 and 100");
