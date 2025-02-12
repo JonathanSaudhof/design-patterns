@@ -4,7 +4,7 @@
 
 Creational Patterns deal with the problems of object creation.
 
-### Builder
+## Builder
 
 Problem: You have a highly customable object with a lot of properties.
 For every instance you would need to pass multiple properties into the constructor or set them afterwards.
@@ -16,21 +16,21 @@ Solution:
   constructor or object directly
 - Furthermore, you can create a director for all the different builder configuratoins and just call those methods if you need certain configurations multiple times.
 
-### Factory
+## Factory
 
 Problem: You have different kinds of objects with the same interface but different implementations (oven vs. microwave). At runtime you need to create one of them.
 
 Solution: The (abstract) factory provides a single interface for creating those functional related objects.
 Depending on which object you need the factory interface creates it.
 
-### Prototype
+## Prototype
 
 Problem: You want to have a (deep) copy of an object with all the internal state, a clone.
 
 Solution: You delegate the "cloneing" to the object itself. "Cloneable" object have a public method "clone"
 implemented, which returns a 1:1 copy of itself.
 
-### Singleton
+## Singleton
 
 Problem: At runtime you need a single instance of an object and want to make sure, that just one instances is created.
 
