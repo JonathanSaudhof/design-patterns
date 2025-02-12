@@ -59,3 +59,13 @@ Problem: Your object structure can be visualized as a tree. E.g. a box, where yo
 
 Solution: With the composite pattern you offer a shared interface for components and leafs.
 A component takes a list of this items with that interfaces. Now you can put in components or leafs.
+
+## Decorator Pattern
+
+Problem: You want to add behavior to an existing object without extending/changing the object itself or
+to create another class. Imagine you want to create an outfit and have 2 jeans, 3 t-shirts, and 2 hat.
+In order to create multiple outfits you have think you have to create a class for each jeans-t-shirt-hat combination.
+
+Solution: instead of inheritance you can use the decorator pattern and compose the classes. A decorator is a wrapper, which
+takes the same interface as an input as it returns. Therefore you can combine decorators with infinitely with other decorators
+of the same interface.

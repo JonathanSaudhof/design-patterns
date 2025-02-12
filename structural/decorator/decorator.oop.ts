@@ -1,9 +1,6 @@
-interface Phone {
-  getPrice(): number;
-  getPackage(): string[];
-}
+import type { IDecoratorPhone } from "./decorator.interface";
 
-class IPhone11 implements Phone {
+export class IPhone11 implements IDecoratorPhone {
   getPrice(): number {
     return 300;
   }
@@ -13,7 +10,7 @@ class IPhone11 implements Phone {
   }
 }
 
-class IPhone11Pro implements Phone {
+export class IPhone11Pro implements IDecoratorPhone {
   getPrice(): number {
     return 500;
   }
@@ -23,9 +20,10 @@ class IPhone11Pro implements Phone {
   }
 }
 
-class PhoneAddonDecorator implements Phone {
-  private phone: Phone;
-  constructor(phone: Phone) {
+class PhoneAddonDecorator implements IDecoratorPhone {
+  private readonly phone: IDecoratorPhone;
+
+  constructor(phone: IDecoratorPhone) {
     this.phone = phone;
   }
 
@@ -38,7 +36,7 @@ class PhoneAddonDecorator implements Phone {
   }
 }
 
-class AddPowerSupply extends PhoneAddonDecorator {
+export class AddPowerSupply extends PhoneAddonDecorator {
   getPrice(): number {
     return super.getPrice() + 10;
   }
@@ -48,7 +46,7 @@ class AddPowerSupply extends PhoneAddonDecorator {
   }
 }
 
-class AddEarPhones extends PhoneAddonDecorator {
+export class AddEarPhones extends PhoneAddonDecorator {
   getPrice(): number {
     return super.getPrice() + 20;
   }
@@ -58,7 +56,7 @@ class AddEarPhones extends PhoneAddonDecorator {
   }
 }
 
-class AddInsurance extends PhoneAddonDecorator {
+export class AddInsurance extends PhoneAddonDecorator {
   getPrice(): number {
     return super.getPrice() + 50;
   }
