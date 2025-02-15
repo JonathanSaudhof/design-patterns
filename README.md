@@ -55,6 +55,8 @@ however you want. cirle(yellow()), ... etc.
 
 ## Composite Pattern
 
+Example: Notion is a perfect example. Everything is a page. And a page can hold a page.
+
 Problem: Your object structure can be visualized as a tree. E.g. a box, where you can put in multiple items (leafs) or a box itself (component), which also can hold multiple items or boxes.
 
 Solution: With the composite pattern you offer a shared interface for components and leafs.
