@@ -53,7 +53,7 @@ Problem: You have similar objects / entities which can be differentiated along t
 Solution: With the bridge pattern you split up those dimensions in two different interfaces. Now you create classes for each concrete implementation for each dimension (e.g. circle, rectangle, square, and red, green, yellow). Those concrete implementations will take the other dimension as a dependency that you can compose them
 however you want. cirle(yellow()), ... etc.
 
-## Composite Pattern
+## Composite
 
 Example: Notion is a perfect example. Everything is a page. And a page can hold a page.
 
@@ -62,7 +62,7 @@ Problem: Your object structure can be visualized as a tree. E.g. a box, where yo
 Solution: With the composite pattern you offer a shared interface for components and leafs.
 A component takes a list of this items with that interfaces. Now you can put in components or leafs.
 
-## Decorator Pattern
+## Decorator
 
 Problem: You want to add behavior to an existing object without extending/changing the object itself or
 to create another class. Imagine you want to create an outfit and have 2 jeans, 3 t-shirts, and 2 hat.
@@ -71,3 +71,10 @@ In order to create multiple outfits you have think you have to create a class fo
 Solution: instead of inheritance you can use the decorator pattern and compose the classes. A decorator is a wrapper, which
 takes the same interface as an input as it returns. Therefore you can combine decorators with infinitely with other decorators
 of the same interface.
+
+## Facade
+
+Problem: You have a complex task that needs the orchestration of multiple subsystems. For testing you need a lot of
+
+Solution: When handling complex or complicated tasks you can create an facade interface in order to hide the complexity
+behind an easy to understand and test api.
