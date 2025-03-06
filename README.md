@@ -106,5 +106,18 @@ processed in a concrete order.
 Solution: With the chain of responsibility pattern you break down the process and steps into a chain of handlers. Each handler has
 a link to the next handler. Every handler can decide wether or not it passes the request to the next handler.
 
+## Command
+
+Command is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation lets you pass requests as a method arguments, delay or queue a request’s execution, and support undoable operations.[^fn1]
+
+Problem [^fn3]:
+
+- You have operations (like "Undo" or "Redo") that need to be executed later.
+- You want to queue or log actions (e.g., saving user commands for a history feature).
+- You need to decouple the sender of a request from the object that actually performs it.
+
+It decouples the invoker (button, switch) and the actual object that does something (receiver). The invoker calls an action on the receiver using the command.
+
 [^fn1]: [RefactoringGuru](https://refactoring.guru/)
 [^fn2]: [YouTube: Christopher Okhravi](https://www.youtube.com/@ChristopherOkhravi)
+[^fn3]: ChatGPT
