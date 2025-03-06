@@ -78,3 +78,11 @@ Problem: You have a complex task that needs the orchestration of multiple subsys
 
 Solution: When handling complex or complicated tasks you can create an facade interface in order to hide the complexity
 behind an easy to understand and test api.
+
+## Proxy
+
+Problem: You want to controll the access of an external resource, have an expensive object to create within you system you need to access at different places,
+or you want to protect the access of an internal object.
+
+Solution: You can mittigate the access via an proxy which implements the same interface as the original object but with an adapted logic. The proxy is
+controlls when an how the actual object is instantiaded.
