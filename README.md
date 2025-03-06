@@ -2,7 +2,7 @@
 
 # Creational Patterns
 
-Creational Patterns deal with the problems of object creation.
+Creational Patterns deal with the problems of object creation. [^fn1]
 
 ## Builder
 
@@ -37,7 +37,11 @@ Problem: At runtime you need a single instance of an object and want to make sur
 Solution: Despite providing a public constructor, the singleton pattern has a static method which either returns
 an existing instance of the object or creates a new instance an stores it in a private property of the object.
 
+---
+
 # Structural Patterns
+
+Structural design patterns explain how to assemble objects and classes into larger structures, while keeping these structures flexible and efficient. [^fn1]
 
 ## Adapter
 
@@ -51,7 +55,7 @@ the wanted interface.
 Problem: You have similar objects / entities which can be differentiated along two dimensions. (e.g. shape and color). Imagine you have 10 colors and 3 shapes. In order to provide an object for each combination you will endup creating 30 classes.
 
 Solution: With the bridge pattern you split up those dimensions in two different interfaces. Now you create classes for each concrete implementation for each dimension (e.g. circle, rectangle, square, and red, green, yellow). Those concrete implementations will take the other dimension as a dependency that you can compose them
-however you want. cirle(yellow()), ... etc.
+however you want. cirle(yellow()), ... etc. [^fn1]
 
 ## Composite
 
@@ -81,8 +85,26 @@ behind an easy to understand and test api.
 
 ## Proxy
 
-Problem: You want to controll the access of an external resource, have an expensive object to create within you system you need to access at different places,
-or you want to protect the access of an internal object.
+Problem: You want to controll the access of an external resource, have an expensive object to create within you system you need to access at different places, or you want to protect the access of an internal object. [^fn2]
 
 Solution: You can mittigate the access via an proxy which implements the same interface as the original object but with an adapted logic. The proxy is
 controlls when an how the actual object is instantiaded.
+
+---
+
+# Behavioral Patterns
+
+Behavioral design patterns are concerned with algorithms and the assignment of responsibilities between objects. [^fn1]
+
+## Chain of responseability
+
+Chain of Responsibility is a behavioral design pattern that lets you pass requests along a chain of handlers. Upon receiving a request, each handler decides either to process the request or to pass it to the next handler in the chain.[^fn1]
+
+Problem: You have a process with a certain order of decision points, like authorisation, and need to make sure that they will be
+processed in a concrete order.
+
+Solution: With the chain of responsibility pattern you break down the process and steps into a chain of handlers. Each handler has
+a link to the next handler. Every handler can decide wether or not it passes the request to the next handler.
+
+[^fn1]: [RefactoringGuru](https://refactoring.guru/)
+[^fn2]: [YouTube: Christopher Okhravi](https://www.youtube.com/@ChristopherOkhravi)
