@@ -118,6 +118,19 @@ Problem [^fn3]:
 
 It decouples the invoker (button, switch) and the actual object that does something (receiver). The invoker calls an action on the receiver using the command.
 
+## Iterator
+
+Iterator is a behavioral design pattern that lets you traverse elements of a collection without exposing its underlying representation (list, stack, tree, etc.).[^fn1]
+
+Problem: [^fn1]
+You have different collections of objects with all sorts of complex data structures (stack, tree, graphs, and others). For all theses collections you need a simple interface to go through all the elements without
+caring about the underlying datastructure.
+
+Solution: [^fn1]
+The main idea of the Iterator pattern is to extract the traversal behavior of a collection into a separate object called an iterator.
+
+All of the traversal details are hidden behind the iterator implementation.
+
 [^fn1]: [RefactoringGuru](https://refactoring.guru/)
 [^fn2]: [YouTube: Christopher Okhravi](https://www.youtube.com/@ChristopherOkhravi)
 [^fn3]: ChatGPT
