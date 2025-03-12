@@ -131,6 +131,17 @@ The main idea of the Iterator pattern is to extract the traversal behavior of a 
 
 All of the traversal details are hidden behind the iterator implementation.
 
+## Mediator
+
+Mediator is a behavioral design pattern that lets you reduce chaotic dependencies between objects. The pattern restricts direct communications between the objects and forces them to collaborate only via a mediator object.[^fn1]
+
+Problem: You want to have objects to communicate or call actions upon each other. With the increasing amount of objects you have to manage the dependencies
+and interactions on a object/class level. This makes it hard to reuse those objects in other places as those objects are hard coupled with each other.
+
+Solution: You can introduce an intermediate object inbetween as a central mediator. Each object does depend just on the mediator. The mediator itself knows
+every "registered" component. Each time an object wants to interact with an other object it calls a method on the mediator. The mediator than
+manages the request with an implemented logic.
+
 [^fn1]: [RefactoringGuru](https://refactoring.guru/)
 [^fn2]: [YouTube: Christopher Okhravi](https://www.youtube.com/@ChristopherOkhravi)
 [^fn3]: ChatGPT
