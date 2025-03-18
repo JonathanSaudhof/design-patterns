@@ -142,6 +142,12 @@ Solution: You can introduce an intermediate object inbetween as a central mediat
 every "registered" component. Each time an object wants to interact with an other object it calls a method on the mediator. The mediator than
 manages the request with an implemented logic.
 
+## Observer
+
+Problem: You have multiple objects (subscriber) waiting for an object (provider) to change in order to react accordingly. How does the subscribers know when the provider changed? A subscriber could pull/ask for the state every 2 seconds. But what if you have hundreds or thousands of subscribers?
+
+Solution: The observer pattern introduces a subscription and delegates the responsibility to the provider to notify all the subscribers on every state change. The subscriber just listens/receives the update/notification and acts accordingly.
+
 [^fn1]: [RefactoringGuru](https://refactoring.guru/)
 [^fn2]: [YouTube: Christopher Okhravi](https://www.youtube.com/@ChristopherOkhravi)
 [^fn3]: ChatGPT
