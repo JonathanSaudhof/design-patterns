@@ -148,6 +148,12 @@ Problem: You have multiple objects (subscriber) waiting for an object (provider)
 
 Solution: The observer pattern introduces a subscription and delegates the responsibility to the provider to notify all the subscribers on every state change. The subscriber just listens/receives the update/notification and acts accordingly.
 
+## State
+
+Problem: "The State pattern is closely related to the concept of a Finite-State Machine. The main idea is that, at any given moment, there’s a finite number of states which a program can be in. Within any unique state, the program behaves differently, and the program can be switched from one state to another instantaneously. However, depending on a current state, the program may or may not switch to certain other states. These switching rules, called transitions, are also finite and predetermined [^fn1]."
+
+Solution: With the Strategy pattern decouple the actual state from the original object/context, which just holds the reference to the initial state. For each state there is a single implementation for the logic when some events occure. Each implementation handles the transition to the next state based on the incoming event.
+
 [^fn1]: [RefactoringGuru](https://refactoring.guru/)
 [^fn2]: [YouTube: Christopher Okhravi](https://www.youtube.com/@ChristopherOkhravi)
 [^fn3]: ChatGPT
