@@ -78,10 +78,9 @@ of the same interface.
 
 ## Facade
 
-Problem: You have a complex task that needs the orchestration of multiple subsystems. For testing you need a lot of
+Problem: You have a complex task that needs the orchestration of multiple subsystems. For testing you need a lot of time mocking all the needed sub classes just to get some actual data.
 
-Solution: When handling complex or complicated tasks you can create an facade interface in order to hide the complexity
-behind an easy to understand and test api.
+Solution: When handling complex or complicated tasks you can create an facade interface in order to hide the complexity behind an easy to understand and test api.
 
 ## Proxy
 
