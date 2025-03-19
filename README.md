@@ -184,6 +184,15 @@ Solution: With the State pattern decouple the actual state from the original obj
 
 [State Code](./behavioral/state)
 
+## Strategy
+
+Problem: You have a family of algorithms, and you need to choose one of them to be executed at runtime. For example, you might have different ways to sort a list, and you want to be able to switch between them easily. [^fn4]
+
+Solution: The strategy pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. The strategy pattern lets the algorithm vary independently from the clients that use it. [^fn4]
+
+[Strategy Code](./behavioral/strategy)
+
 [^fn1]: [RefactoringGuru](https://refactoring.guru/)
 [^fn2]: [YouTube: Christopher Okhravi](https://www.youtube.com/@ChristopherOkhravi)
 [^fn3]: ChatGPT
+[^fn4]: Github Copilot
